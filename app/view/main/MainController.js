@@ -9,6 +9,23 @@ Ext.define('News.view.main.MainController', {
 
     alias: 'controller.main',
 
+    routes : {
+        'backend' : 'onBackend'
+    },
+
+    onBackend : function() {
+        // Remove the localStorage key/value
+        localStorage.removeItem('loggedIn');
+
+        // Remove Main View
+        this.getView().destroy();
+
+        // Add the Login Window
+        Ext.create({
+            xtype: 'login'
+        });
+    },
+
     onItemSelected: function (sender, record) {
         Ext.Msg.confirm('Confirm', 'Are you sure?', 'onConfirm', this);
     },
@@ -17,5 +34,17 @@ Ext.define('News.view.main.MainController', {
         if (choice === 'yes') {
             //
         }
+    },
+    onClickButton: function () {
+        // Remove the localStorage key/value
+        localStorage.removeItem('loggedIn');
+
+        // Remove Main View
+        this.getView().destroy();
+
+        // Add the Login Window
+        Ext.create({
+            xtype: 'login'
+        });
     }
 });

@@ -6,7 +6,7 @@
 Ext.application({
     name: 'News',
 
-    extend: 'News.Application',
+    extend: 'News.Application'
 
     // requires: [
     //     'News.view.main.Main'

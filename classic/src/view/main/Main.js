@@ -20,6 +20,7 @@ Ext.define('News.view.main.Main', {
 
     controller: 'main',
     viewModel: 'main',
+    plugins: 'viewport',
 
     ui: 'navigation',
 
